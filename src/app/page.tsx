@@ -1,5 +1,16 @@
+'use client'
+import 'reflect-metadata'
 import styles from './page.module.css'
+import { injectContainerDependencies } from '@/features/core/di/container'
+import { ProductsCatalog } from '@/features/product/ui/ProductsCatalog'
 
 export default function Home() {
-  return <main className={styles.main}>Hello world</main>
+  injectContainerDependencies()
+
+  return (
+    <main className={styles.main}>
+      <h1>MARKET</h1>
+      <ProductsCatalog></ProductsCatalog>
+    </main>
+  )
 }

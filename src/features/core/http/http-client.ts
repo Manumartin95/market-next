@@ -1,4 +1,4 @@
-import axios, { AxiosInstance, AxiosResponse } from 'axios'
+import axios, { AxiosInstance, AxiosRequestConfig, AxiosResponse } from 'axios'
 import { singleton } from 'tsyringe'
 
 @singleton()
@@ -11,7 +11,7 @@ export class HttpClient {
     })
   }
 
-  get<Result, Param = void>(url: string, param?: Param): Promise<AxiosResponse<Result>> {
-    return this._httpInstance.get(url, {})
+  get<Result>(path: string, config?: AxiosRequestConfig): Promise<AxiosResponse<Result>> {
+    return this._httpInstance.get(path, config)
   }
 }

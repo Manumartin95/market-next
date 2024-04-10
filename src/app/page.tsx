@@ -2,7 +2,7 @@
 import 'reflect-metadata'
 import styles from './page.module.css'
 import { injectContainerDependencies } from '@/features/core/di/container'
-import { ProductsCatalog } from '@/features/product/ui/ProductsCatalog'
+import Products from '@/app/products/page'
 
 export default function Home() {
   injectContainerDependencies()
@@ -10,7 +10,7 @@ export default function Home() {
   return (
     <main className={styles.main}>
       <h1>MARKET</h1>
-      <ProductsCatalog></ProductsCatalog>
+      <Products></Products>
     </main>
   )
 }

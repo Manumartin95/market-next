@@ -2,6 +2,8 @@ import { container } from 'tsyringe'
 import { GetProductsQry } from '@/features/product/application/get-products.qry'
 import { useEffect, useState } from 'react'
 import { Product } from '@/features/product/domain/product'
+import { ProductCard } from '@/features/product/ui/ProductCard/ProductCard'
+import styles from './ProductsCatalog.module.css'
 
 export const ProductsCatalog = () => {
   const useCase = container.resolve(GetProductsQry)
@@ -14,9 +16,11 @@ export const ProductsCatalog = () => {
   }, [useCase])
 
   return (
-    <ul>
+    <ul className={styles['product-list']}>
       {products.map(product => (
-        <li key={product.id}>{product.title}</li>
+        <li key={product.id}>
+          <ProductCard {...product}></ProductCard>
+        </li>
       ))}
     </ul>
   )

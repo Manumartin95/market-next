@@ -1,7 +1,5 @@
 import axios, { AxiosInstance, AxiosRequestConfig, AxiosResponse } from 'axios'
-import { singleton } from 'tsyringe'
 
-@singleton()
 export class HttpClient {
   readonly _httpInstance: AxiosInstance
 

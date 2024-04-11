@@ -15,4 +15,8 @@ export class HttpProductRepository implements ProductRepository {
       .then(response => response.data)
       .then(data => ProductMapper.toDomainList(data))
   }
+
+  findProduct(filter: string): Promise<Product[]> {
+    return this.getProducts()
+  }
 }

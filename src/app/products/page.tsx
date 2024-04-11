@@ -3,15 +3,16 @@ import { ProductsCatalog } from '@/features/product/delivery/client/components/P
 import { GetProductsAction } from '@/features/product/delivery/server/actions/getProducts.action'
 import { useEffect, useState, useTransition } from 'react'
 import { Product } from '@/features/product/domain/product'
+import { ProductSearchBar } from '@/features/product/delivery/client/components/ProductSearchBar/ProductSearchBar'
 
 export default function Products() {
   const productsAction = GetProductsAction()
-  let [, transitionStartFunctions] = useTransition()
+  const [, transitionStartFunction] = useTransition()
   const [products, setProducts] = useState<Product[]>([])
 
   useEffect(() => {
     const startTransition = () =>
-      transitionStartFunctions(() => {
+      transitionStartFunction(() => {
         productsAction.then(response => {
           setProducts(response.data.map(product => Product.fromPrimitives(product)))
         })
@@ -22,5 +23,10 @@ export default function Products() {
     }
   }, [products])
 
-  return <ProductsCatalog products={products}></ProductsCatalog>
+  return (
+    <>
+      <ProductSearchBar onSearch={param => console.log(param)} />
+      <ProductsCatalog products={products}></ProductsCatalog>
+    </>
+  )
 }

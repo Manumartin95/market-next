@@ -7,4 +7,8 @@ export class InMemoryProductRepository implements ProductRepository {
   async getProducts(): Promise<Product[]> {
     return ProductMapper.toDomainList(ProductMother.ProductList)
   }
+
+  async findProduct(filter: string): Promise<Product[]> {
+    return ProductMapper.toDomainList(ProductMother.ProductList).filter(product => product.title.includes(filter))
+  }
 }

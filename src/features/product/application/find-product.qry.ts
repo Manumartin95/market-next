@@ -2,10 +2,10 @@ import { Query } from '@/features/core/use-case/types/query'
 import { Product } from '@/features/product/domain/product'
 import { ProductRepository } from '@/features/product/domain/product-repository'
 
-export class GetProductsQry implements Query<Product[]> {
+export class FindProductQry implements Query<Product[], string> {
   constructor(private readonly productRepository: ProductRepository) {}
 
-  handle(): Promise<Product[]> {
-    return this.productRepository.getProducts()
+  handle(param: string): Promise<Product[]> {
+    return this.productRepository.findProduct(param)
   }
 }

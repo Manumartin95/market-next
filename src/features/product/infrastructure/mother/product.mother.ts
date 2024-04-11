@@ -3,14 +3,14 @@ import { HttpProductDto } from '@/features/product/infrastructure/dtos/http-prod
 export class ProductMother {
   static Product: HttpProductDto = {
     id: 1,
-    title: 'foo title',
-    description: 'foo description',
+    title: 'Mountain Landscape',
+    description: 'A breathtaking view of mountains',
     category: {
       id: 1,
-      name: 'foo category',
+      name: 'Nature',
     },
-    images: ['foo-image'],
-    price: 966,
+    images: ['https://source.unsplash.com/featured/?mountains'],
+    price: 150,
     updatedAt: '2024-04-11T08:31:18.000Z',
     creationAt: '2024-04-11T05:43:56.000Z',
   }

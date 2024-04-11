@@ -29,4 +29,8 @@ export class Product {
       images: this.images.map(image => Image.toPrimitives(image)),
     }
   }
+
+  getProductMainImage() {
+    return this.images[0].value
+  }
 }

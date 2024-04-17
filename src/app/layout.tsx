@@ -4,6 +4,7 @@ import '@/styles/reset.css'
 import '@/styles/globals.css'
 import '@/styles/theme.css'
 import '@/styles/typography.css'
+import styles from '@/app/page.module.css'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -19,7 +20,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        <main className={styles.main}>{children}</main>
+      </body>
     </html>
   )
 }

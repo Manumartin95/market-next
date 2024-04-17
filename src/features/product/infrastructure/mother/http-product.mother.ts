@@ -1,6 +1,6 @@
 import { HttpProductDto } from '@/features/product/infrastructure/dtos/http-product.dto'
 
-export class ProductMother {
+export class HttpProductMother {
   static Product: HttpProductDto = {
     id: 1,
     title: 'Mountain Landscape',

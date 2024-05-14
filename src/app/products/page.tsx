@@ -8,36 +8,12 @@ const Products: NextPage<{
   params: { slug: string }
   searchParams: { [key: string]: string | undefined }
 }> = async props => {
-  // const [, transitionStartFunction] = useTransition()
-  // const [products, setProducts] = useState<Product[]>([])
-
-  // useEffect(() => {
-  //   const startTransition = () =>
-  //     transitionStartFunction(() => {
-  //       console.log(pageProps, router)
-  //       GetProductsAction().then(response => {
-  //         setProducts(response.data.map(product => Product.fromPrimitives(product)))
-  //       })
-  //     })
-  //
-  //   if (products.length === 0) {
-  //     startTransition()
-  //   }
-  // }, [products, pageProps])
-  //
-  // const findProducts = (filter: string) => {
-  //   transitionStartFunction(() => {
-  //     FindProductsAction(filter).then(response => {
-  //       setProducts(response.data.map(product => Product.fromPrimitives(product)))
-  //     })
-  //   })
-  // }
-
   return (
     <>
+      <h2>MARKET</h2>
       <ProductSearchBar />
-      <Suspense key={props.searchParams.search} fallback={<h1>Loading...</h1>}>
-        <ProductsCatalog filter={props.searchParams.search ?? ''}></ProductsCatalog>
+      <Suspense key={props.searchParams?.search} fallback={<h1>Loading...</h1>}>
+        <ProductsCatalog filter={props.searchParams?.search ?? ''}></ProductsCatalog>
       </Suspense>
     </>
   )

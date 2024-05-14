@@ -1,12 +1,5 @@
-'use client'
-import Products from '@/app/products/page'
-import React from 'react'
+import { redirect } from 'next/navigation'
 
 export default function Home() {
-  return (
-    <>
-      <h1>MARKET</h1>
-      <Products></Products>
-    </>
-  )
+  redirect('/products')
 }

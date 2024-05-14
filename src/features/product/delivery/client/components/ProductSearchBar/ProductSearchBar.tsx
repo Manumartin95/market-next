@@ -22,7 +22,11 @@ export const ProductSearchBar: FC = () => {
   )
 
   const handleSubmit = () => {
-    router.push(pathname + '?' + createQueryString('search', inputText))
+    if (inputText.length > 0) {
+      router.push(pathname + '?' + createQueryString('search', inputText))
+    } else {
+      router.push(pathname)
+    }
   }
 
   return (

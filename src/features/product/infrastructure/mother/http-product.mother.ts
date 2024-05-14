@@ -133,18 +133,5 @@ export class HttpProductMother {
       updatedAt: '2024-04-03T15:36:02.000Z',
       creationAt: '2024-04-02T18:45:59.000Z',
     },
-    {
-      id: 10,
-      title: 'Abstract Architecture',
-      description: 'Futuristic abstract architecture',
-      category: {
-        id: 10,
-        name: 'Architecture',
-      },
-      images: ['https://source.unsplash.com/featured/?architecture'],
-      price: 700,
-      updatedAt: '2024-04-02T11:25:14.000Z',
-      creationAt: '2024-04-01T14:19:07.000Z',
-    },
   ]
 }

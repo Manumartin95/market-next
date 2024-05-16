@@ -31,7 +31,6 @@ describe('ProductSearchBar', () => {
 
   it('should call router.push with the correct query string on form submit', async () => {
     setup()
-    // const { push } = setup()
     const input = screen.getByRole('textbox')
     const button = screen.getByRole('button', { name: /search/i })
 
@@ -45,7 +44,6 @@ describe('ProductSearchBar', () => {
 
   it('should call router.push with the pathname only when input is empty on form submit', async () => {
     setup()
-    // const { push } = setup()
     const button = screen.getByRole('button', { name: /search/i })
 
     fireEvent.click(button)

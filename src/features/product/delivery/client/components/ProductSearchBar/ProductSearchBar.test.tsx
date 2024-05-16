@@ -38,7 +38,7 @@ describe('ProductSearchBar', () => {
     fireEvent.click(button)
 
     await waitFor(() => {
-      expect(push).toHaveBeenCalledWith('/foo-path?search=search+termasdf')
+      expect(push).toHaveBeenCalledWith('/foo-path?search=search+term')
     })
   })
 

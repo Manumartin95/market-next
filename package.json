@@ -18,6 +18,8 @@
   },
   "devDependencies": {
     "@jest/globals": "^29.7.0",
+    "@testing-library/jest-dom": "^6.4.5",
+    "@testing-library/react": "^15.0.7",
     "@types/jest": "^29.5.12",
     "@types/node": "^20",
     "@types/react": "^18",
@@ -29,8 +31,6 @@
     "jest-environment-jsdom": "^29.7.0",
     "jest-mock-extended": "^3.0.7",
     "prettier": "3.2.5",
-    "ts-jest": "^29.1.2",
-    "ts-node": "^10.9.2",
     "typescript": "^5"
   }
 }

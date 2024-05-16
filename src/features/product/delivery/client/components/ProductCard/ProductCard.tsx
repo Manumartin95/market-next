@@ -4,7 +4,7 @@ import styles from './ProductCard.module.css'
 
 export const ProductCard: FC<{ product: Product }> = ({ product }) => {
   return (
-    <div className={styles['product-card']}>
+    <div className={styles['product-card']} data-testid="product-card">
       <img
         className={styles['product-card__image']}
         src={product.getProductMainImage()}

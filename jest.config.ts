@@ -12,6 +12,7 @@ const config: Config = {
   testEnvironment: 'jsdom',
   clearMocks: true,
   collectCoverage: true,
+  setupFilesAfterEnv: ['@testing-library/jest-dom'],
   coverageDirectory: 'coverage',
 }
 

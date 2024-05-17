@@ -10,6 +10,7 @@
     "prettier": "npx prettier ./src --write",
     "test": "jest",
     "test:e2e": "npx playwright test",
+    "test:pre-push": "npm run test && npm run test:e2e",
     "prepare": "husky"
   },
   "dependencies": {
